@@ -9,23 +9,37 @@
 <html>
     <head>
         <title>Calculo IMC</title>
+
+         <style>
+            body {
+                background-image: url("img/fruta.png");
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Calculo de IMC</h1>
-        <form>
-            <p><h3>Peso<br><input name="peso" id="peso" type="tel">
-            </h3>   
-            <h3>Altura<br><input name="altura" id="altura" type="tel"></h3>
-            <h3>Sexo
-                <select style="width:193px;height:45px;" name="sexo" id="sexo">
-                    <option name="sexo1" value="1" id="sexo1">Masculino</option>
-                    <option name="sexo2" value="2" id="sexo2">Feminino</option>
-                </select>
-            </h3>
+        <div class="jumbotron" >
+            <div class="container">
+                <h2>Calculo de IMC</h2>
+                <form>
+                    <p><h3>Peso<br><input name="peso" id="peso" type="number" step="any" class="btn btn-lg btn-warning">
+                    </h3>   
+                    <h3>Altura<br><input name="altura" id="altura" type="number" step="any" class="btn btn-lg btn-warning"></h3>
+                    <h3>Sexo
+                        <select style="width:193px;height:45px;" name="sexo" id="sexo" class="btn btn-lg btn-warning">
+                            <option name="sexo1" value="1" id="sexo1">Masculino</option>
+                            <option name="sexo2" value="2" id="sexo2">Feminino</option>
+                        </select>
+                    </h3>
 
-            <button>Resultado IMC</button>
+                    <button class="btn btn-lg btn-block btn-info">Resultado IMC</button>
 
-        </form>
+                </form>
+            </div>
+        </div>
     </body>
     <%
         String valorpeso = request.getParameter("peso");
@@ -65,5 +79,8 @@
                 out.print("Como mulher, você está com obesidade grave com esse indice: " + calculo);
             }
         }
+        
+        
+
     %>
 </html>
